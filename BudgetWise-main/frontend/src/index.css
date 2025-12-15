@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Pastel Color Palette - Soft Blues and Mint Green */
+        --background: 220 23% 97%; /* Soft cloud gray #F5F7FA */
+        --foreground: 215 16% 32%; /* Muted slate #4A5568 */
+        
+        /* Primary - Pastel Blue for trust and stability */
+        --primary: 217 91% 82%; /* Soft pastel blue #A3BFFA */
+        --primary-foreground: 217 50% 25%; /* Deep blue text */
+        --primary-hover: 217 91% 75%; /* Slightly darker on hover */
+        
+        /* Secondary - Pastel Mint Green for growth */
+        --secondary: 152 68% 85%; /* Pastel mint #A8E6CF */
+        --secondary-foreground: 152 40% 25%; /* Deep green text */
+        --secondary-hover: 152 68% 78%;
+        
+        /* Accent - Soft Peach for highlights */
+        --accent: 24 100% 88%; /* Soft peach #FFD6B3 */
+        --accent-foreground: 24 60% 30%;
+        
+        /* Success - Mint Green */
+        --success: 152 68% 85%;
+        --success-foreground: 152 40% 25%;
+        
+        /* Warning - Soft Yellow */
+        --warning: 45 100% 85%;
+        --warning-foreground: 45 60% 30%;
+        
+        /* Destructive - Muted Red */
+        --destructive: 0 70% 88%;
+        --destructive-foreground: 0 50% 35%;
+        
+        /* Card - Elevated surface */
+        --card: 0 0% 100%; /* Pure white */
+        --card-foreground: 215 16% 32%;
+        
+        /* Muted elements */
+        --muted: 220 14% 93%; /* Light dove gray #E8ECEF */
+        --muted-foreground: 215 10% 50%;
+        
+        /* Popover */
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 16% 32%;
+        
+        /* Borders and inputs */
+        --border: 220 13% 88%; /* Soft gray border */
+        --input: 220 13% 91%;
+        --ring: 217 91% 82%;
+        
+        /* Chart colors - Pastel palette */
+        --chart-1: 217 91% 82%; /* Pastel blue */
+        --chart-2: 152 68% 85%; /* Mint green */
+        --chart-3: 24 100% 88%; /* Peach */
+        --chart-4: 280 60% 85%; /* Lavender */
+        --chart-5: 340 75% 85%; /* Soft pink */
+        
+        --radius: 12px;
+        
+        /* Custom shadows for depth */
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+        
+        /* Smooth transitions */
+        --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dark {
+        --background: 222 47% 11%; /* Dark blue-gray */
+        --foreground: 210 40% 98%;
+        
+        --primary: 217 91% 70%;
+        --primary-foreground: 222 47% 11%;
+        --primary-hover: 217 91% 75%;
+        
+        --secondary: 152 68% 70%;
+        --secondary-foreground: 222 47% 11%;
+        --secondary-hover: 152 68% 75%;
+        
+        --accent: 24 100% 75%;
+        --accent-foreground: 222 47% 11%;
+        
+        --success: 152 68% 70%;
+        --success-foreground: 222 47% 11%;
+        
+        --warning: 45 100% 70%;
+        --warning-foreground: 222 47% 11%;
+        
+        --destructive: 0 70% 75%;
+        --destructive-foreground: 222 47% 11%;
+        
+        --card: 222 47% 15%;
+        --card-foreground: 210 40% 98%;
+        
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%;
+        
+        --popover: 222 47% 15%;
+        --popover-foreground: 210 40% 98%;
+        
+        --border: 217 33% 22%;
+        --input: 217 33% 22%;
+        --ring: 217 91% 70%;
+        
+        --chart-1: 217 91% 70%;
+        --chart-2: 152 68% 70%;
+        --chart-3: 24 100% 75%;
+        --chart-4: 280 60% 75%;
+        --chart-5: 340 75% 75%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+}
+
+@layer utilities {
+    .shadow-soft {
+        box-shadow: var(--shadow-md);
+    }
+    
+    .shadow-elegant {
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
